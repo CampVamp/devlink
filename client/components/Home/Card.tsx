@@ -1,7 +1,6 @@
 "use client";
 import { Calendar, Building2, MapPin } from "lucide-react";
 import { EventCardType } from "@/lib/types";
-import { useRouter } from "next/navigation";
 
 const Card = ({
   eventName,
@@ -14,12 +13,11 @@ const Card = ({
   eventLink,
   addedByName,
 }: EventCardType) => {
-  const router = useRouter();
   return (
     <div
       className="flex flex-col justify-between gap-5 p-6 border-2 max-w-96 rounded-xl border-b-8 border-r-8 hover:translate-x-1 hover:translate-y-1 hover:border-2 transition-all"
       onClick={() => {
-        router.push(eventLink);
+        window.open(eventLink, "_blank");
       }}
     >
       <div className="text-3xl font-bold">{eventName}</div>

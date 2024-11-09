@@ -9,7 +9,7 @@ const page = () => {
             &lt; Home
           </div>
         </Link>
-        <div className="text-5xl font-bold mt-4">Terms of Use:</div>
+        <div className="text-4xl md:text-5xl font-bold mt-4">Terms of Use:</div>
         <div className="my-6">
           <div className="text-xl font-bold">1. Acceptance of Terms</div>
           <p>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const page = () => {
@@ -5,10 +6,18 @@ const page = () => {
     return <span className="text-white font-bold">{children}</span>;
   };
 
-  const ContributorCard = ({ name, role }: { name: string; role: string }) => {
+  const ContributorCard = ({
+    name,
+    role,
+    imgLink,
+  }: {
+    name: string;
+    role: string;
+    imgLink: string;
+  }) => {
     return (
       <div className="flex flex-col gap-6 justify-center items-center border-2 rounded-lg p-6 min-w-64">
-        <div className="w-44 h-48 bg-neutral-500" />
+        <Image src={imgLink} width={200} height={200} alt={name} />
         <div className="flex flex-col items-center">
           <div className="text-2xl font-bold">{name}</div>
           <div className="text-xl text-neutral-400">{role}</div>
@@ -16,6 +25,7 @@ const page = () => {
       </div>
     );
   };
+
   return (
     <div className="flex justify-center">
       <div className="w-5/6 my-12">
@@ -26,7 +36,7 @@ const page = () => {
             </div>
           </Link>
           <div className="text-5xl font-bold">About Us</div>
-          <p className="text-2xl text-justify text-neutral-400">
+          <p className="text-lg md:text-2xl text-justify text-neutral-400">
             Welcome to <HLT>DevLink</HLT>, your go-to platform for discovering
             the best tech conferences, hackathons, and meetups happening around
             you. Whether you&apos;re a <HLT> tech enthusiast</HLT> looking to
@@ -41,10 +51,22 @@ const page = () => {
         </div>
         <div className="flex flex-col gap-6 my-8">
           <div className="text-4xl font-bold">Maintainers:</div>
-          <div className="flex items-center justify-center gap-6">
-            <ContributorCard name="Ajay ram" role="Frontend Engineer" />
-            <ContributorCard name="Kanak Shilledar" role="Backend Engineer" />
-            <ContributorCard name="Gaurav" role="Backend Engineer" />
+          <div className="flex items-center justify-center gap-8 md:gap-16 flex-wrap">
+            <ContributorCard
+              name="Ajay ram"
+              role="Frontend Engineer"
+              imgLink="https://avatars.githubusercontent.com/u/92621098?v=4"
+            />
+            <ContributorCard
+              name="Kanak Shilledar"
+              role="Backend Engineer"
+              imgLink="https://avatars.githubusercontent.com/u/56501211?v=4"
+            />
+            <ContributorCard
+              name="Gaurav"
+              role="Backend Engineer"
+              imgLink="https://avatars.githubusercontent.com/u/112763891?v=4"
+            />
           </div>
         </div>
       </div>
